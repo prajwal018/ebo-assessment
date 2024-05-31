@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import TodoForm from "./components/TodoForm";
 import TodoList from "./components/TodoList";
-import ErrorBoundary from "./components/ErrorBoundary";
 import axios from "axios";
 import "./App.css";
 
@@ -18,10 +17,8 @@ function App() {
   }, []);
   return (
     <div className="App">
-      <ErrorBoundary>
-        <TodoList todos={todos} fetchTodos={fetchTodos} />
-        <TodoForm fetchTodos={fetchTodos} />
-      </ErrorBoundary>
+      <TodoList todos={todos} fetchTodos={fetchTodos} />
+      <TodoForm fetchTodos={fetchTodos} />
     </div>
   );
 }
